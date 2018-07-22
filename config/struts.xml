@@ -36,9 +36,23 @@
 
         <!-- linkman的Action -->
         <action name="linkMan_*" class="linkManAction" method="{1}">
-
+            <result name="findAll">/jsp/linkman/list.jsp</result>
+            <result name="saveUI">/jsp/linkman/add.jsp</result>
+            <result name="saveSuccess" type="redirectAction">linkMan_findAll.action</result>
+            <result name="editSuccess">/jsp/linkman/edit.jsp</result>
+            <result name="updateSuccess" type="redirectAction">linkMan_findAll.action</result>
+            <result name="deleteSuccess" type="redirectAction">linkMan_findAll.action</result>
         </action>
 
+        <!-- 客户拜访记录的Action的配置 -->
+        <action name="saleVisit_*" class="saleVisitAction" method="{1}">
+            <result name="findAll">/jsp/salevisit/list.jsp</result>
+            <result name="saveUI">/jsp/salevisit/add.jsp</result>
+            <result name="saveSuccess" type="redirectAction">saleVisit_findAll.action</result>
+
+            <!--<interceptor-ref name="privilegeInterceptor"/>-->
+            <!--<interceptor-ref name="defaultStack"/>-->
+        </action>
     </package>
 
 

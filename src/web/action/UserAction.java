@@ -4,7 +4,13 @@ import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
 import domain.User;
+import net.sf.json.JSONArray;
+import net.sf.json.JsonConfig;
+import org.apache.struts2.ServletActionContext;
 import service.UserService;
+
+import java.io.IOException;
+import java.util.List;
 
 /**
  * @description: 用户action
@@ -39,6 +45,16 @@ public class UserAction extends ActionSupport implements ModelDriven<User> {
             ActionContext.getContext().getSession().put("existUser", existUser);
             return SUCCESS;
         }
+    }
+
+    public String findAllUser() throws IOException {
+        List<User> list = userService.findAll();
+        JsonConfig jsonConfig = new JsonConfig();
+        jsonConfig.setExcludes(new String[]{"linkMans","baseDictSource","baseDictLevel","baseDictIndustry"});
+        JSONArray jsonArray = JSONArray.fromObject(list,jsonConfig);
+        ServletActionContext.getResponse().setContentType("text/html;charset=UTF-8");
+        ServletActionContext.getResponse().getWriter().println(jsonArray.toString());
+        return NONE;
     }
 
 }

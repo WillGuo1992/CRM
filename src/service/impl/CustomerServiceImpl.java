@@ -56,4 +56,9 @@ public class CustomerServiceImpl implements CustomerService {
     public void delete(Customer customer) {
         customerDao.delete(customer);
     }
+
+    @Override
+    public List<Customer> findAll() {
+        return customerDao.findAll();
+    }
 }

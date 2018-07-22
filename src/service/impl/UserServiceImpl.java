@@ -6,6 +6,8 @@ import org.springframework.transaction.annotation.Transactional;
 import service.UserService;
 import utils.MD5Utils;
 
+import java.util.List;
+
 /**
  * @description:
  * @author: Will.Guo
@@ -29,5 +31,10 @@ public class UserServiceImpl implements UserService {
     public User login(User user) {
         user.setUser_password(MD5Utils.md5(user.getUser_password()));
         return userDao.login(user);
+    }
+
+    @Override
+    public List<User> findAll() {
+       return userDao.findAll();
     }
 }

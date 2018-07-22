@@ -61,6 +61,7 @@
     <!--配置LinkMan-->
     <bean id="linkManAction" class="web.action.LinkManAction" scope="prototype">
         <property name="linkManService" ref="linkManService"/>
+        <property name="customerService" ref="customerService"/>
     </bean>
     <!-- 配置Service -->
     <bean id="linkManService" class="service.impl.LinkManServiceImpl">
@@ -69,7 +70,28 @@
     <!-- 配置DAO -->
     <bean id="linkManDao" class="dao.impl.LinkManDaoImpl">
         <property name="sessionFactory" ref="sessionFactory"/>
-    </bean><!--配置baseDict-->
+    </bean>
+
+    <!--配置SaleVisit-->
+    <bean id="saleVisitAction" class="web.action.SaleVisitAction" scope="prototype">
+        <property name="saleVisitService" ref="saleVisitService"/>
+    </bean>
+    <!-- 配置Service -->
+    <bean id="saleVisitService" class="service.impl.SaleVisitServiceImpl">
+        <property name="saleVisitDao" ref="saleVisitDao"/>
+    </bean>
+    <!-- 配置DAO -->
+    <bean id="saleVisitDao" class="dao.impl.SaleVisitDaoImpl">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+
+
+
+
+
+
+
+
 
 
     <!-- 配置事务管理器 -->

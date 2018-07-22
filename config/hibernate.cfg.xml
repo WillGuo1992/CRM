@@ -36,6 +36,7 @@
         <mapping resource="/domain/Customer.hbm.xml"/>
         <mapping resource="/domain/BaseDict.hbm.xml"/>
         <mapping resource="/domain/LinkMan.hbm.xml"/>
+        <mapping resource="/domain/Sale_visit.hbm.xml"/>
 
         
     </session-factory>

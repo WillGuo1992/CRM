@@ -4,6 +4,8 @@ import domain.Customer;
 import domain.PageBean;
 import org.hibernate.criterion.DetachedCriteria;
 
+import java.util.List;
+
 /**
  * @description:
  * @author: Will.Guo
@@ -19,4 +21,6 @@ public interface CustomerService {
     void update(Customer customer);
 
     void delete(Customer customer);
+
+    List<Customer> findAll();
 }
