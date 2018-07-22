@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="domain.Customer" table="sys_customer">
+        <id name="cust_id">
+            <generator class="native"></generator>
+        </id>
+        <property name="cust_name" column="cust_name"></property>
+        <!--name 和 column 名称相同时可省略column-->
+        <property name="cust_phone" column="cust_phone"/>
+        <property name="cust_mobile" column="cust_mobile"/>
+        <property name="cust_image" column="cust_image"/>
+        <many-to-one name="baseDictSource" class="domain.BaseDict" column="cust_source"/>
+        <many-to-one name="baseDictIndustry" class="domain.BaseDict" column="cust_industry"/>
+        <many-to-one name="baseDictLevel" class="domain.BaseDict" column="cust_level"/>
+
+        <set name="linkMans" cascade="delete" inverse="true">
+            <key column="lkm_cust_id"></key>
+            <one-to-many class="domain.LinkMan"></one-to-many>
+        </set>
+    </class>
+</hibernate-mapping>

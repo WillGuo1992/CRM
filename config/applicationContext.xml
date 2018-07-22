@@ -32,6 +32,44 @@
         <property name="sessionFactory" ref="sessionFactory"/>
     </bean>
 
+    <!--配置customer-->
+    <bean id="customerAction" class="web.action.CustomerAction" scope="prototype">
+        <property name="customerService" ref="customerService"/>
+    </bean>
+    <!-- 配置Service -->
+    <bean id="customerService" class="service.impl.CustomerServiceImpl">
+        <property name="customerDao" ref="customerDao"/>
+    </bean>
+    <!-- 配置DAO -->
+    <bean id="customerDao" class="dao.impl.CustomerDaoImpl">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+
+    <!--配置baseDict-->
+    <bean id="baseDictAction" class="web.action.BaseDictAction" scope="prototype">
+        <property name="baseDictService" ref="baseDictService"/>
+    </bean>
+    <!-- 配置Service -->
+    <bean id="baseDictService" class="service.impl.BaseDictServiceImpl">
+        <property name="baseDictDao" ref="baseDictDao"/>
+    </bean>
+    <!-- 配置DAO -->
+    <bean id="baseDictDao" class="dao.impl.BaseDictDaoImpl">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+
+    <!--配置LinkMan-->
+    <bean id="linkManAction" class="web.action.LinkManAction" scope="prototype">
+        <property name="linkManService" ref="linkManService"/>
+    </bean>
+    <!-- 配置Service -->
+    <bean id="linkManService" class="service.impl.LinkManServiceImpl">
+        <property name="linkManDao" ref="linkManDao"/>
+    </bean>
+    <!-- 配置DAO -->
+    <bean id="linkManDao" class="dao.impl.LinkManDaoImpl">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean><!--配置baseDict-->
 
 
     <!-- 配置事务管理器 -->

@@ -33,7 +33,10 @@
 
         <!-- 引入映射 -->
         <mapping resource="/domain/User.hbm.xml"/>
-        
+        <mapping resource="/domain/Customer.hbm.xml"/>
+        <mapping resource="/domain/BaseDict.hbm.xml"/>
+        <mapping resource="/domain/LinkMan.hbm.xml"/>
+
         
     </session-factory>
 </hibernate-configuration>

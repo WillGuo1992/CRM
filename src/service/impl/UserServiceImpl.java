@@ -11,7 +11,7 @@ import utils.MD5Utils;
  * @author: Will.Guo
  * @create: 2018-07-21 02:42
  **/
-@Transactional(readOnly = false)
+@Transactional
 public class UserServiceImpl implements UserService {
     private UserDao userDao ;
     public void setUserDao(UserDao userDao) {
