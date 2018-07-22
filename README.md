@@ -22,5 +22,10 @@ CRM-SSH框架
     * 修改联系人
     * 删除联系人
 4. 客户拜访记录管理模块
-    
+    * 拜访列表：分页、时间区间查询
+    * 新增拜访
 ##部分截图
+![Alt text](./reference/注册页面.png)
+![Alt text](./reference/登录页面.png)
+![Alt text](./reference/客户列表.png)
+![Alt text](./reference/新增客户.png)
